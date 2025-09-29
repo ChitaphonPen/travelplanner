@@ -8,7 +8,9 @@
           "id": "it_welcome",
           "time": "10:30",
           "title": "Taipei Main Station → โรงแรม",
+          "image": "https://example.com/raohe.jpg",
           "link": "https://maps.google.com/",
+          "map": "https://maps.google.com/?q=Raohe+Night+Market",
           "note": "ซื้อตั๋ว EasyCard / ฝากกระเป๋า",
           "cost": 150,
           "tags": ["transport"]

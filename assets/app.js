@@ -102,10 +102,15 @@ function renderItems(){
     return;
   }
 
-  items.forEach((it, idx)=>{
-    const link = it.link ? `<a href="${it.link}" target="_blank" class="link-primary text-decoration-none">
-                              <i class="bi bi-link-45deg"></i> เปิดลิงก์
-                            </a>` : "";
+  items.forEach((it)=>{
+    const img = it.image ? `<img src="${it.image}" class="card-img-top" alt="${escapeHtml(it.title)}">` : "";
+    const linkSite = it.link ? `<a href="${it.link}" target="_blank" class="link-primary text-decoration-none me-2">
+                                  <i class="bi bi-link-45deg"></i> เว็บไซต์
+                                </a>` : "";
+    const linkMap = it.map ? `<a href="${it.map}" target="_blank" class="link-success text-decoration-none">
+                                <i class="bi bi-geo-alt"></i> แผนที่
+                              </a>` : "";
+
     const tags = (it.tags||[]).map(t=>`<span class="badge rounded-pill badge-tag me-1">#${t}</span>`).join("");
     const cost = it.cost ? `<span class="text-nowrap"><i class="bi bi-cash-coin"></i> ${Number(it.cost).toLocaleString()} ฿</span>` : "";
     const time = it.time ? `<span class="time me-2"><i class="bi bi-clock"></i> ${it.time}</span>` : "";
@@ -113,6 +118,7 @@ function renderItems(){
     $root.append(`
       <div class="col-md-6 col-lg-4">
         <div class="card card-trip h-100">
+          ${img}
           <div class="card-body d-flex flex-column">
             <div class="d-flex justify-content-between align-items-start">
               <div>
@@ -129,7 +135,7 @@ function renderItems(){
             <p class="card-text flex-grow-1">${escapeHtml(it.note||"")}</p>
             <div class="d-flex justify-content-between align-items-center mt-2 pt-2 border-top">
               <div class="tags">${tags}</div>
-              ${link}
+              <div>${linkSite}${linkMap}</div>
             </div>
           </div>
         </div>
@@ -137,6 +143,7 @@ function renderItems(){
     `);
   });
 }
+
 
 // ========== EVENTS ==========
 function bindEvents(){
@@ -165,15 +172,18 @@ function bindEvents(){
   $("#itemForm").on("submit", function(e){
     e.preventDefault();
     const payload = {
-      id: $("#itemId").val() || genId(),
-      day: $("#formDay").val(),
-      time: $("#formTime").val(),
-      title: $("#formTitle").val().trim(),
-      link: $("#formLink").val().trim(),
-      note: $("#formNote").val().trim(),
-      cost: Number($("#formCost").val()||0),
-      tags: splitTags($("#formTags").val())
-    };
+  id: $("#itemId").val() || genId(),
+  day: $("#formDay").val(),
+  time: $("#formTime").val(),
+  title: $("#formTitle").val().trim(),
+  image: $("#formImage").val().trim(),
+  link: $("#formLink").val().trim(),
+  map: $("#formMap").val().trim(),
+  note: $("#formNote").val().trim(),
+  cost: Number($("#formCost").val()||0),
+  tags: splitTags($("#formTags").val())
+};
+
     upsertItem(payload);
     bootstrap.Modal.getInstance(document.getElementById('editModal')).hide();
     renderAll();
@@ -225,7 +235,9 @@ function openEdit(id){
   $("#formDay").val(day.date);
   $("#formTime").val(item.time||"");
   $("#formTitle").val(item.title||"");
+  $("#formImage").val(item.image||"");
   $("#formLink").val(item.link||"");
+$("#formMap").val(item.map||"");
   $("#formNote").val(item.note||"");
   $("#formCost").val(item.cost||"");
   $("#formTags").val((item.tags||[]).join(", "));
@@ -244,14 +256,17 @@ function upsertItem(payload){
   // if exists: update; else push
   const {item, day: oldDay} = findItemById(payload.id) || {};
   const newItem = {
-    id: payload.id,
-    time: payload.time,
-    title: payload.title,
-    link: payload.link,
-    note: payload.note,
-    cost: payload.cost,
-    tags: payload.tags
-  };
+  id: payload.id,
+  time: payload.time,
+  title: payload.title,
+  image: payload.image,
+  link: payload.link,
+  map: payload.map,
+  note: payload.note,
+  cost: payload.cost,
+  tags: payload.tags
+};
+
   if (item){
     // remove from old day if moved
     oldDay.items = oldDay.items.filter(x=>x.id!==payload.id);
