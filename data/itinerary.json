@@ -1,0 +1,65 @@
+{
+  "tripName": "Taipei 3D2N",
+  "days": [
+    {
+      "date": "2025-10-20",
+      "items": [
+        {
+          "id": "it_welcome",
+          "time": "10:30",
+          "title": "Taipei Main Station → โรงแรม",
+          "link": "https://maps.google.com/",
+          "note": "ซื้อตั๋ว EasyCard / ฝากกระเป๋า",
+          "cost": 150,
+          "tags": ["transport"]
+        },
+        {
+          "id": "it_raohe",
+          "time": "18:00",
+          "title": "Raohe Night Market",
+          "link": "https://maps.google.com/",
+          "note": "ลอง Pepper Bun/ย่างเสียบไม้",
+          "cost": 400,
+          "tags": ["food","market","must"]
+        }
+      ]
+    },
+    {
+      "date": "2025-10-21",
+      "items": [
+        {
+          "id": "it_shifen",
+          "time": "09:00",
+          "title": "Shifen Waterfall",
+          "link": "",
+          "note": "เผื่อเวลาเดินสะพาน/ถ่ายรูป",
+          "cost": 200,
+          "tags": ["nature","waterfall"]
+        },
+        {
+          "id": "it_xlb",
+          "time": "12:30",
+          "title": "Xiao Long Bao",
+          "link": "",
+          "note": "สั่งเซ็ตเล็ก + ผัก",
+          "cost": 380,
+          "tags": ["food"]
+        }
+      ]
+    },
+    {
+      "date": "2025-10-22",
+      "items": [
+        {
+          "id": "it_aquarium",
+          "time": "10:00",
+          "title": "Xpark Aquarium",
+          "link": "",
+          "note": "ซื้อตั๋วออนไลน์ล่วงหน้า",
+          "cost": 600,
+          "tags": ["aquarium","family"]
+        }
+      ]
+    }
+  ]
+}
