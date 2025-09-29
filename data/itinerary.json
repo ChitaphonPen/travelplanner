@@ -2,7 +2,8 @@
   "tripName": "Taipei 3D2N",
   "days": [
     {
-      "date": "2025-10-20",
+      "date": "2025-10-22",
+      "bgcolor":"#CDEBC5",
       "items": [
         {
           "id": "it_welcome",
@@ -27,7 +28,8 @@
       ]
     },
     {
-      "date": "2025-10-21",
+      "date": "2025-10-23",
+      "bgcolor":"#FFC39B",
       "items": [
         {
           "id": "it_shifen",
@@ -50,7 +52,77 @@
       ]
     },
     {
-      "date": "2025-10-22",
+      "date": "2025-10-24",
+      "bgcolor":"#A6C3E4",
+      "items": [
+        {
+          "id": "it_aquarium",
+          "time": "10:00",
+          "title": "Xpark Aquarium",
+          "link": "",
+          "note": "ซื้อตั๋วออนไลน์ล่วงหน้า",
+          "cost": 600,
+          "tags": ["aquarium","family"]
+        }
+      ]
+    }
+
+
+
+    ,
+    {
+      "date": "2025-10-25",
+      "bgcolor":"#D9C4EC",
+      "items": [
+        {
+          "id": "it_aquarium",
+          "time": "10:00",
+          "title": "Xpark Aquarium",
+          "link": "",
+          "note": "ซื้อตั๋วออนไลน์ล่วงหน้า",
+          "cost": 600,
+          "tags": ["aquarium","family"]
+        }
+      ]
+    }
+
+
+    ,
+    {
+      "date": "2025-10-26",
+      "bgcolor":"#FF9997",
+      "items": [
+        {
+          "id": "it_aquarium",
+          "time": "10:00",
+          "title": "Xpark Aquarium",
+          "link": "",
+          "note": "ซื้อตั๋วออนไลน์ล่วงหน้า",
+          "cost": 600,
+          "tags": ["aquarium","family"]
+        }
+      ]
+    }
+    ,
+    {
+      "date": "2025-10-27",
+      "bgcolor":"#FCF695",
+      "items": [
+        {
+          "id": "it_aquarium",
+          "time": "10:00",
+          "title": "Xpark Aquarium",
+          "link": "",
+          "note": "ซื้อตั๋วออนไลน์ล่วงหน้า",
+          "cost": 600,
+          "tags": ["aquarium","family"]
+        }
+      ]
+    }
+    ,
+    {
+      "date": "2025-10-28",
+      "bgcolor":"#EFCFD4",
       "items": [
         {
           "id": "it_aquarium",

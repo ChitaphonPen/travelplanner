@@ -69,29 +69,32 @@ function getFilteredItems(){
 
   STATE.raw.days.forEach(d=>{
     d.items.forEach(it=>{
-      // day filter
       if (STATE.day && d.date !== STATE.day) return;
-      // search
+
       const joined = [
         d.date, it.time, it.title, it.note, (it.tags||[]).join(",")
       ].join(" ").toLowerCase();
       if (q && !joined.includes(q)) return;
-      // tag filter
       if (tagFilterActive) {
         const tags = new Set(it.tags||[]);
         for (const t of STATE.tagsActive){ if(!tags.has(t)) return; }
       }
-      list.push({...it, __day: d.date});
+
+      list.push({
+        ...it,
+        __day: d.date,
+        __bgcolor: d.bgcolor || null   // ✅ เก็บสีพื้นหลังไว้
+      });
     });
   });
 
-  // sort by day then time
   return list.sort((a,b)=>{
     const ad = a.__day.localeCompare(b.__day);
     if (ad !== 0) return ad;
     return (a.time||"").localeCompare(b.time||"");
   });
 }
+
 
 function renderItems(){
   const items = getFilteredItems();
@@ -114,10 +117,10 @@ function renderItems(){
     const tags = (it.tags||[]).map(t=>`<span class="badge rounded-pill badge-tag me-1">#${t}</span>`).join("");
     const cost = it.cost ? `<span class="text-nowrap"><i class="bi bi-cash-coin"></i> ${Number(it.cost).toLocaleString()} ฿</span>` : "";
     const time = it.time ? `<span class="time me-2"><i class="bi bi-clock"></i> ${it.time}</span>` : "";
-
+    const cardStyle = it.__bgcolor ? `style="background-color:${it.__bgcolor}"` : "";
     $root.append(`
       <div class="col-md-6 col-lg-4">
-        <div class="card card-trip h-100">
+        <div class="card card-trip h-100 shadow  ${cardStyle}">
           ${img}
           <div class="card-body d-flex flex-column">
             <div class="d-flex justify-content-between align-items-start">
