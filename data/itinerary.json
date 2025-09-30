@@ -3,33 +3,195 @@
   "days": [
     {
       "date": "2025-10-22",
-      "bgcolor":"#CDEBC5",
+      "bgcolor": "#CDEBC5",
       "items": [
         {
-          "id": "it_welcome",
-          "time": "10:30",
-          "title": "Taipei Main Station → โรงแรม",
-          "image": "https://example.com/raohe.jpg",
-          "link": "https://maps.google.com/",
-          "map": "https://maps.google.com/?q=Raohe+Night+Market",
-          "note": "ซื้อตั๋ว EasyCard / ฝากกระเป๋า",
-          "cost": 150,
-          "tags": ["transport"]
+          "id": "220620",
+          "time": "06:20",
+          "title": "Arrive at Taoyuan Airport",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Taoyuan_International_Airport.jpg/250px-Taoyuan_International_Airport.jpg",
+          "link": "",
+          "map": "https://maps.app.goo.gl/wYFM9r49f5mB7k2v5",
+          "note": "",
+          "cost": 0,
+          "tags": [
+            "transport"
+          ]
         },
         {
-          "id": "it_raohe",
-          "time": "18:00",
-          "title": "Raohe Night Market",
-          "link": "https://maps.google.com/",
-          "note": "ลอง Pepper Bun/ย่างเสียบไม้",
-          "cost": 400,
-          "tags": ["food","market","must"]
+          "id": "220800",
+          "time": "08:00",
+          "title": "Taoyuan Airport → Taipei Main Station",
+          "image": "https://www.taipeitravelgeek.com/wp-content/uploads/2019/05/Taipei-Main-768x538.jpg",
+          "link": "",
+          "map": "https://maps.app.goo.gl/9TSDXUHNVrdTubWFA",
+          "note": "Taoyuan Airport MRT ลงสถานี Taipei Main Station\r\nขึ้นแบบ Express สีม่วงจะเร็วกว่า (ใช้เวลาประมาณ 35-45 นาที)",
+          "cost": 0,
+          "tags": [
+            "transport"
+          ]
+        },
+        {
+          "id": "220900",
+          "time": "09:00",
+          "title": "Meworld Hotel (ฝากกระเป๋า)",
+          "image": "https://cdn-zen.readytotrip.com/t/1024x768/content/71/45/71452200573cae317bf133d9f45af14fa555b9eb.JPEG",
+          "link": "",
+          "map": "https://maps.app.goo.gl/oA7UHvd9QPvyfTraA",
+          "note": "ลงสถานี Taipei Main Station\r\n- ทางออก Z2 หรือ Z4 (ทางออก Z4 จะมีลิฟต์)\r\nMeworld Hotel - เข้าอาคารแล้วกดลิฟต์ขึ้นไปชั้น 7 (ใต้อาคารมี Family Mart)",
+          "cost": 150,
+          "tags": [
+            "transport"
+          ]
+        },
+        {
+          "id": "221000",
+          "time": "10:00",
+          "title": "Huang Long Zhuang (มื้อเช้า กินเสี่ยวหลงเปา)",
+          "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nolBXoMh6amDSd4sj-hRhYSKS-SRUSIp0iSvfIDZ3ctgGX6Kjq6cZe2cqEu2aI3oR8RDMFui8PqrslXtzzXF2P1g4OJuKJFEbTu06xLH7B4mxyR5GGVc0R-OnCFSmydDh2Zgvy6UQ=w408-h306-k-no",
+          "link": "",
+          "map": "https://maps.app.goo.gl/LmyDNdafBYn2sVWc7",
+          "note": "1. MRT สายสีแดง จาก Taipei Main Station ไปลงสถานี Chiang Kai-Shek Memorial Hall ทางออก 2\r\n2. จากนั้นเดินต่อประมาณ 450 เมตร / 6 นาที",
+          "cost": 150,
+          "tags": [
+            "transport"
+          ]
+        },
+        {
+          "id": "221130",
+          "time": "11:30",
+          "title": "Chun Shui Tang (ชุนสุ่ยถัง) - อนุสรณ์เจียงไคเช็ค",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pearl%20Milk%20Tea%20in%20Chun%20Shui%20Tang.jpg",
+          "link": "",
+          "map": "https://www.google.com/maps?q=Chun+Shui+Tang+National+Concert+Hall+Taipei",
+          "note": "ชานมเจ้าแรก\r\nเดินจากร้านเสี่ยวหลงเปาประมาณ 1.1 km / 16 นาที",
+          "cost": 150,
+          "tags": [
+            "transport"
+          ]
+        },
+        {
+          "id": "221200",
+          "time": "12:00",
+          "title": "วัดหลงซาน (ไหว้พระเอาฤกษ์)",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Longshan%20Temple%2C%20Taipei%2001.jpg",
+          "link": "",
+          "map": "https://www.google.com/maps?q=Longshan+Temple+Taipei",
+          "note": "เปิด 06.00-22.00\r\n1. MRT สายสีแดง จาก Chiang Kai-Shek Memorial Hall ไปลงสถานี Taipei Main Station\r\n2. MRT สายสีน้ำเงิน จาก Taipei Main Station ไปลงสถานี MRT Longshan Temple",
+          "cost": 150,
+          "tags": [
+            "transport"
+          ]
+        },
+        {
+          "id": "221300",
+          "time": "13:00",
+          "title": "Ximen (กิน เที่ยว ช้อป ตอนกลางวัน)",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Taipei%20Taiwan%20Ximending-01.jpg",
+          "link": "",
+          "map": "https://www.google.com/maps?q=Ximending",
+          "note": "MRT สายสีน้ำเงิน จาก Longshan Temple ไปลงสถานี Ximen",
+          "cost": 150,
+          "tags": [
+            "transport"
+          ]
+        },
+        {
+          "id": "221300",
+          "time": "13:00",
+          "title": "Mountain Kids Coffee Roaster",
+          "image": "",
+          "link": "",
+          "map": "https://www.google.com/maps?q=Mountain+Kids+Coffee+Roaster+Taipei",
+          "note": "MRT Ximen Exit 5 เดินอีกประมาณ 600 เมตร\r\n- บรรยากาศสงบเหมาะเป็น co-working space มีกาแฟคุณภาพดีและเมล็ดกาแฟให้เลือกซื้อกลับ\r\n- เมนูแนะนำคือ Hojicha และกาแฟลาเต้ เมนูราคาเฉลี่ย 160-250 NTD. \r\n- หากจะนั่งทานที่ร้านจะต้องสั่งเมนูเครื่องดื่มอย่างน้อย 1 แก้ว/คน\r\n- คาเฟ่สไตล์มินิมอลสีขาว เห็นวิว Northern History Gate (ประตูทิศเหนือ)\r\n- เวลาเปิด-ปิด 08.00-20.00 น. ปิดทุกวันจันทร์",
+          "cost": 150,
+          "tags": [
+            "transport"
+          ]
+        },
+        {
+          "id": "221300",
+          "time": "13:00",
+          "title": "ตึกอิฐแดง (The Red House)",
+          "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Taipei%20Taiwan%20Red-House-Theater-01.jpg",
+          "link": "",
+          "map": "https://www.google.com/maps?q=The+Red+House+Taipei",
+          "note": "MRT Ximen ทางออก 1 เดินอีกประมาณ 100 เมตร จะถึงตึกอิฐแดง (The Red House)\r\nภายใน ตึกอิฐแดง (The Red House) จะเป็นโซนจัดแสดงนิทรรศการที่พาเราไปเรียนรู้เกี่ยวกับประวัติของย่านซีเหมินติง (Ximending) โดยข้างๆ กันนั้นมีร้านน้ำชา The Red House เปิดให้บริการอยู่",
+          "cost": 150,
+          "tags": [
+            "transport"
+          ]
+        },
+        {
+          "id": "221500",
+          "time": "15:00",
+          "title": "Meworld Hotel (Check-in)",
+          "image": "",
+          "link": "",
+          "map": "",
+          "note": "เก็บของ พักผ่อน\r\nMRT สายสีน้ำเงิน จาก Ximen ไปลงสถานี Taipei Main Station\r\n- เข้าอาคารแล้วกดลิฟต์ขึ้นไปชั้น 7 (ใต้อาคารมี Family Mart)\r\n- ทางออก Z2 หรือ Z4 (ทางออก Z4 จะมีลิฟต์)",
+          "cost": 150,
+          "tags": [
+            "transport"
+          ]
+        },
+        {
+          "id": "221630",
+          "time": "16:30",
+          "title": "Dadaocheng Old Street & Dihua Street (เดินเล่น)",
+          "image": "https://www.1000milesjourney.com/wp-content/uploads/2017/09/Dihua-Street-Taipei-01-722x480.jpg",
+          "link": "",
+          "map": "https://maps.app.goo.gl/tCAuTJWRwUHssKEN8",
+          "note": "เดินจากโรงแรมไปประมาณ 1.4 km / 20 min\r\nกด Google Map ปักหมุดไปที่ Xia Hai City God Temple (台北霞海城隍廟)\r\n(ตลาดเปิดถึงประมาณ 2 ทุ่ม แต่บางร้านก็ปิด 6 โมง)",
+          "cost": 150,
+          "tags": [
+            "transport"
+          ]
+        },
+        {
+          "id": "221630",
+          "time": "16:30",
+          "title": "Dadaocheng Wharf (ดูพระอาทิตย์ตกที่ท่าเรือต้าเต้าเฉิง)",
+          "image": "https://www.taipeitimes.com/images/2023/07/06/P02-230706-610.jpg",
+          "link": "",
+          "map": "https://maps.app.goo.gl/XrKLGuZwk3G6hGhz9",
+          "note": "เดินเพลินๆ ผ่าน Dadaocheng Old Street ไปจนถึงริมแม่น้ำ ปักหมุด google map ไปที่ Dadaocheng Wharf",
+          "cost": 150,
+          "tags": [
+            "transport"
+          ]
+        },
+        {
+          "id": "221630",
+          "time": "16:30",
+          "title": "Ningxia Night Market (หาของกิน)",
+          "image": "https://i0.wp.com/wefuntaiwan.com/wp-content/uploads/2020/03/IMG_3506.jpg?w=600&ssl=1",
+          "link": "",
+          "map": "https://maps.app.goo.gl/TwoVnPytzFBoMsjN7",
+          "note": "ตลาดกลางคืนหนิงเซี่ย\r\nเวลาเปิด : ประมาณ 17.30 – 24.00\r\n - เดินจาก Dadaocheng Wharf ประมาณ 1 km. / 15 นาที\r\n - เดินจาก Dadaocheng Squre ประมาณ 600 m / 9 นาที\r\nของที่ต้องลอง >> เผือกทอดเจ้าดัง มีไส้เผือกล้วน, เผือกไข่เค็ม, เผือกหมูหยอง",
+          "cost": 150,
+          "tags": [
+            "transport"
+          ]
+        },
+        {
+          "id": "222100",
+          "time": "21:00",
+          "title": "Meworld Hotel (นอนนนนน)",
+          "image": "https://cdn-zen.readytotrip.com/t/1024x768/content/71/45/71452200573cae317bf133d9f45af14fa555b9eb.JPEG",
+          "link": "",
+          "map": "",
+          "note": "- ถ้ากลับจาก Dadaocheng ก็เดินกลับ\r\n- ถ้ากลับจาก Ningxia Night Market (MRT Zhongshan ทางออก 2)\r\n1. MRT สายสีแดง จากสถานี Zhongshan ลงสถานี Taipei Main Station\r\nMeworld Hotel\r\n- เข้าอาคารแล้วกดลิฟต์ขึ้นไปชั้น 7 (ใต้อาคารมี Family Mart)\r\n- ทางออก Z2 หรือ Z4 (ทางออก Z4 จะมีลิฟต์)",
+          "cost": 150,
+          "tags": [
+            "transport"
+          ]
         }
       ]
     },
     {
       "date": "2025-10-23",
-      "bgcolor":"#FFC39B",
+      "bgcolor": "#FFC39B",
       "items": [
         {
           "id": "it_shifen",
@@ -38,7 +200,10 @@
           "link": "",
           "note": "เผื่อเวลาเดินสะพาน/ถ่ายรูป",
           "cost": 200,
-          "tags": ["nature","waterfall"]
+          "tags": [
+            "nature",
+            "waterfall"
+          ]
         },
         {
           "id": "it_xlb",
@@ -47,13 +212,15 @@
           "link": "",
           "note": "สั่งเซ็ตเล็ก + ผัก",
           "cost": 380,
-          "tags": ["food"]
+          "tags": [
+            "food"
+          ]
         }
       ]
     },
     {
       "date": "2025-10-24",
-      "bgcolor":"#A6C3E4",
+      "bgcolor": "#A6C3E4",
       "items": [
         {
           "id": "it_aquarium",
@@ -62,17 +229,16 @@
           "link": "",
           "note": "ซื้อตั๋วออนไลน์ล่วงหน้า",
           "cost": 600,
-          "tags": ["aquarium","family"]
+          "tags": [
+            "aquarium",
+            "family"
+          ]
         }
       ]
-    }
-
-
-
-    ,
+    },
     {
       "date": "2025-10-25",
-      "bgcolor":"#D9C4EC",
+      "bgcolor": "#D9C4EC",
       "items": [
         {
           "id": "it_aquarium",
@@ -81,16 +247,16 @@
           "link": "",
           "note": "ซื้อตั๋วออนไลน์ล่วงหน้า",
           "cost": 600,
-          "tags": ["aquarium","family"]
+          "tags": [
+            "aquarium",
+            "family"
+          ]
         }
       ]
-    }
-
-
-    ,
+    },
     {
       "date": "2025-10-26",
-      "bgcolor":"#FF9997",
+      "bgcolor": "#FF9997",
       "items": [
         {
           "id": "it_aquarium",
@@ -99,14 +265,16 @@
           "link": "",
           "note": "ซื้อตั๋วออนไลน์ล่วงหน้า",
           "cost": 600,
-          "tags": ["aquarium","family"]
+          "tags": [
+            "aquarium",
+            "family"
+          ]
         }
       ]
-    }
-    ,
+    },
     {
       "date": "2025-10-27",
-      "bgcolor":"#FCF695",
+      "bgcolor": "#FCF695",
       "items": [
         {
           "id": "it_aquarium",
@@ -115,14 +283,16 @@
           "link": "",
           "note": "ซื้อตั๋วออนไลน์ล่วงหน้า",
           "cost": 600,
-          "tags": ["aquarium","family"]
+          "tags": [
+            "aquarium",
+            "family"
+          ]
         }
       ]
-    }
-    ,
+    },
     {
       "date": "2025-10-28",
-      "bgcolor":"#EFCFD4",
+      "bgcolor": "#EFCFD4",
       "items": [
         {
           "id": "it_aquarium",
@@ -131,7 +301,10 @@
           "link": "",
           "note": "ซื้อตั๋วออนไลน์ล่วงหน้า",
           "cost": 600,
-          "tags": ["aquarium","family"]
+          "tags": [
+            "aquarium",
+            "family"
+          ]
         }
       ]
     }
