@@ -106,45 +106,78 @@ function renderItems(){
   }
 
   items.forEach((it)=>{
-    const img = it.image ? `<img src="${it.image}" class="card-img-top" alt="${escapeHtml(it.title)}">` : "";
-    const linkSite = it.link ? `<a href="${it.link}" target="_blank" class="link-primary text-decoration-none me-2">
-                                  <i class="bi bi-link-45deg"></i> เว็บไซต์
-                                </a>` : "";
-    const linkMap = it.map ? `<a href="${it.map}" target="_blank" class="link-success text-decoration-none">
-                                <i class="bi bi-geo-alt"></i> แผนที่
-                              </a>` : "";
+  // รองรับข้อมูลเก่า: แปลง image -> images
+  const imgs = (it.images && it.images.length) ? it.images
+              : (it.image ? [it.image] : []);
 
-    const tags = (it.tags||[]).map(t=>`<span class="badge rounded-pill badge-tag me-1">#${t}</span>`).join("");
-    const cost = it.cost ? `<span class="text-nowrap"><i class="bi bi-cash-coin"></i> ${Number(it.cost).toLocaleString()} ฿</span>` : "";
-    const time = it.time ? `<span class="time me-2"><i class="bi bi-clock"></i> ${it.time}</span>` : "";
-    const cardStyle = it.__bgcolor ? `style="background-color:${it.__bgcolor}"` : "";
-    $root.append(`
-      <div class="col-md-6 col-lg-4">
-        <div class="card card-trip h-100 shadow  ${cardStyle}">
-          ${img}
-          <div class="card-body d-flex flex-column">
-            <div class="d-flex justify-content-between align-items-start">
-              <div>
-                <div class="small text-muted mb-1"><i class="bi bi-calendar2-week"></i> ${it.__day}</div>
-                <h5 class="card-title mb-1">${escapeHtml(it.title)}</h5>
-              </div>
-              <button class="btn btn-sm btn-outline-secondary rounded-circle btn-edit" data-id="${it.id}">
-                <i class="bi bi-pencil"></i>
-              </button>
+  let mediaHtml = "";
+  if (imgs.length > 1) {
+    const cid = "car_" + it.id; // unique id ต่อการ์ด
+    const slides = imgs.map((url,idx)=>`
+      <div class="carousel-item ${idx===0?'active':''}">
+        <img loading="lazy" src="${url}" class="card-img-fixed" alt="${escapeHtml(it.title)} ${idx+1}">
+      </div>
+    `).join("");
+
+    mediaHtml = `
+      <div id="${cid}" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-inner">
+          ${slides}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#${cid}" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#${cid}" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+        <div class="carousel-indicators">
+          ${imgs.map((_,i)=>`<button type="button" data-bs-target="#${cid}" data-bs-slide-to="${i}" class="${i===0?'active':''}" aria-label="Slide ${i+1}"></button>`).join("")}
+        </div>
+      </div>`;
+  } else if (imgs.length === 1) {
+    mediaHtml = `<img loading="lazy" src="${imgs[0]}" class="card-img-fixed" alt="${escapeHtml(it.title)}">`;
+  }
+
+  const linkSite = it.link ? `<a href="${it.link}" target="_blank" class="btn btn-outline-primary btn-sm me-2">
+                                <i class="bi bi-link-45deg"></i> เว็บไซต์
+                              </a>` : "";
+  const linkMap = it.map ? `<a href="${it.map}" target="_blank" class="btn btn-outline-success btn-sm">
+                              <i class="bi bi-geo-alt"></i> แผนที่
+                            </a>` : "";
+  const tags = (it.tags||[]).map(t=>`<span class="badge rounded-pill badge-tag me-1">#${t}</span>`).join("");
+  const cost = it.cost ? `<span class="text-nowrap"><i class="bi bi-cash-coin"></i> ${Number(it.cost).toLocaleString()} ฿</span>` : "";
+  const time = it.time ? `<span class="time me-2"><i class="bi bi-clock"></i> ${it.time}</span>` : "";
+  const cardStyle = it.__bgcolor ? `style="background-color:${it.__bgcolor}"` : "";
+
+  $("#items").append(`
+    <div class="col-md-6 col-lg-4">
+      <div class="card card-trip h-100" ${cardStyle}>
+        ${mediaHtml}
+        <div class="card-body d-flex flex-column">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <div class="small text-muted mb-1"><i class="bi bi-calendar2-week"></i> ${it.__day}</div>
+              <h5 class="card-title mb-1">${escapeHtml(it.title)}</h5>
             </div>
-            <div class="mb-2">
-              ${time} ${cost}
-            </div>
-            <p class="card-text flex-grow-1">${escapeHtml(it.note||"")}</p>
-            <div class="d-flex justify-content-between align-items-center mt-2 pt-2 border-top">
-              <div class="tags">${tags}</div>
-              <div>${linkSite}${linkMap}</div>
-            </div>
+            <button class="btn btn-sm btn-outline-secondary rounded-circle btn-edit" data-id="${it.id}">
+              <i class="bi bi-pencil"></i>
+            </button>
+          </div>
+          <div class="mb-2">
+            ${time} ${cost}
+          </div>
+          <p class="card-text flex-grow-1">${escapeHtml(it.note||"")}</p>
+          <div class="d-flex justify-content-between align-items-center mt-2 pt-2 border-top">
+            <div class="tags">${tags}</div>
+            <div>${linkSite}${linkMap}</div>
           </div>
         </div>
       </div>
-    `);
-  });
+    </div>
+  `);
+});
 }
 
 
@@ -262,7 +295,7 @@ function upsertItem(payload){
   id: payload.id,
   time: payload.time,
   title: payload.title,
-  image: payload.image,
+  images: payload.images,
   link: payload.link,
   map: payload.map,
   note: payload.note,
@@ -313,3 +346,25 @@ function exportJSON(){
   URL.revokeObjectURL(url);
   a.remove();
 }
+
+
+// helper แยก url ด้วย comma
+function splitUrls(str){ return (str||"").split(",").map(s=>s.trim()).filter(Boolean); }
+
+// ...ใน $("#itemForm").on("submit", ...)
+const payload = {
+  id: $("#itemId").val() || genId(),
+  day: $("#formDay").val(),
+  time: $("#formTime").val(),
+  title: $("#formTitle").val().trim(),
+  // NEW:
+  images: splitUrls($("#formImages").val()),
+  link: $("#formLink").val().trim(),
+  map: $("#formMap").val().trim(),
+  note: $("#formNote").val().trim(),
+  cost: Number($("#formCost").val()||0),
+  tags: splitTags($("#formTags").val())
+};
+
+// ...ใน openEdit(id)
+$("#formImages").val(((item.images && item.images.length) ? item.images : (item.image ? [item.image] : [] )).join(", "));

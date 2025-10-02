@@ -25,3 +25,26 @@ body{
   --bs-btn-padding-x: .6rem;
   --bs-btn-font-size: .85rem;
 }
+
+
+/* ความสูงรูปในการ์ด: ปรับได้จุดเดียว */
+:root { --card-img-h: 200px; }
+@media (min-width: 768px){ :root { --card-img-h: 220px; } }
+@media (min-width: 992px){ :root { --card-img-h: 240px; } }
+
+.card-trip .card-img-fixed {
+  width: 100%;
+  height: var(--card-img-h);
+  object-fit: cover;
+  display: block;
+}
+
+/* ปรับระยะขอบของ Carousel ในการ์ดให้เนียน */
+.card-trip .carousel,
+.card-trip .carousel-inner,
+.card-trip .carousel-item {
+  border-bottom: 1px solid #f1f1f1;
+}
+.card-trip .carousel-indicators [data-bs-target] {
+  width: 8px; height: 8px; border-radius: 50%;
+}
