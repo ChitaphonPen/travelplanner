@@ -148,7 +148,7 @@ function renderItems(){
                             </a>` : "";
   const tags = (it.tags||[]).map(t=>`<span class="badge rounded-pill badge-tag me-1">#${t}</span>`).join("");
   const cost = it.cost ? `<span class="text-nowrap"><i class="bi bi-cash-coin"></i> ${Number(it.cost).toLocaleString()} ฿</span>` : "";
-  const time = it.time ? `<span class="time me-2"><i class="bi bi-clock"></i> ${it.time}</span>` : "";
+  const time = it.time ? `<i class="bi bi-clock ms-3"></i> ${it.time}` : "";
   const cardStyle = it.__bgcolor ? `style="background-color:${it.__bgcolor}"` : "";
 
   $("#items").append(`
@@ -158,17 +158,15 @@ function renderItems(){
         <div class="card-body d-flex flex-column">
           <div class="d-flex justify-content-between align-items-start">
             <div>
-              <div class="small text-muted mb-1"><i class="bi bi-calendar2-week"></i> ${it.__day}</div>
-              <h5 class="card-title mb-1">${escapeHtml(it.title)}</h5>
+              <h6 class="small text-muted mb-1"><i class="bi bi-calendar2-week"></i> ${it.__day} ${time} ${cost}</h6>
+              <h6 class="card-title mb-1">${escapeHtml(it.title)}</h6>
             </div>
             <button class="btn btn-sm btn-outline-secondary rounded-circle btn-edit" data-id="${it.id}">
               <i class="bi bi-pencil"></i>
             </button>
           </div>
-          <div class="mb-2">
-            ${time} ${cost}
-          </div>
-          <p class="card-text flex-grow-1">${escapeHtml(it.note||"")}</p>
+          
+          <textarea id="x${Math.floor(Math.random() * 10000)}" class="card-text flex-grow-1 border-0 bg-transparent small text-muted" rows="5" >${escapeHtml(it.note||"")}</textarea>
           <div class="d-flex justify-content-between align-items-center mt-2 pt-2 border-top">
             <div class="tags">${tags}</div>
             <div>${linkSite}${linkMap}</div>
@@ -180,7 +178,11 @@ function renderItems(){
 });
 }
 
-
+/*
+<div class="mb-2">
+            ${time} ${cost}
+          </div>
+*/
 // ========== EVENTS ==========
 function bindEvents(){
   $("#searchBox").on("input", function(){
